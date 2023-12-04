@@ -1,0 +1,94 @@
+.header {
+  position: relative;
+  display: flex;
+  width: calc(100vw - 196px);
+  height: 76px;
+  padding: 0px 44px 0px 44px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background: #f2f3f5;
+  .header-select {
+    display: flex;
+    width: 222px;
+    height: 45px;
+    padding: 16px 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #f2f3f5;
+
+    label {
+      color: #000;
+      font-family: Roboto;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      opacity: 0.6;
+    }
+  }
+  .header-checkbox {
+    display: flex;
+    align-items: center;
+  }
+  .header-arrow {
+    width: 24px;
+    height: 24px;
+  }
+  .header-online {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+  }
+  .header-input {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  .header-Notification {
+    display: flex;
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-radius: 6px;
+    background: #efefef;
+  }
+  .header-call {
+    display: flex;
+    padding: 10px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 6px;
+    background: #0db06e;
+    cursor: pointer;
+  }
+  .header-acount {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 16px;
+    }
+  }
+  .header-name {
+    color: #e4252d;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0;
+  }
+  .header-email {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    margin: 0;
+  }
+}

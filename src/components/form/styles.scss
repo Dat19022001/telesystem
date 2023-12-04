@@ -1,0 +1,34 @@
+.form {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  display: none;
+  gap: 10px;
+  .form-item {
+    cursor: pointer;
+    display: flex;
+    padding: 10px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px 12px 0px 0px;
+    background: #E3E3E3;
+    p {
+      margin: 0;
+      overflow: hidden;
+      color: #000;
+      text-overflow: ellipsis;
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  .form-active{
+    background: #fff;
+  }
+}
+.form-check{
+  display: flex;
+}

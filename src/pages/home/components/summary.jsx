@@ -1,0 +1,57 @@
+import SummaryTotal from "../../../asset/Frame 9.png";
+import SummaryTime from "../../../asset/SummaryTime.png";
+import SummaryAnswer from "../../../asset/SummaryAnser.png";
+import SummaryMiss from "../../../asset/SummaryMiss.png";
+import SummaryFail from "../../../asset/SummaryFail.png";
+import "./summary.scss";
+const Summary = () => {
+  return (
+    <div className="Summary">
+      <div className="Summary-title">
+        <div className="Summary-name">Cuộc gọi</div>
+        <div className="Summary-time">
+          <p>Last updated: 17:23:27</p>
+        </div>
+      </div>
+      <div className="Summary-content">
+        <div className="Summary-item">
+          <div className="Summary-avatar">
+            <img src={SummaryTotal} alt="Total" />
+            <span> Tổng số cuộc gọi</span>
+          </div>
+          <div className="Summary-number">4</div>
+        </div>
+        <div className="Summary-item">
+          <div className="Summary-avatar">
+            <img src={SummaryTime} alt="Total" />
+            <span> Tổng thời gian</span>
+          </div>
+          <div className="Summary-number">00:14:01</div>
+        </div>
+        <div className="Summary-item">
+          <div className="Summary-avatar">
+            <img src={SummaryAnswer} alt="Total" />
+            <span> Tổng số cuộc Answered</span>
+          </div>
+          <div className="Summary-number">0</div>
+        </div>
+        <div className="Summary-item">
+          <div className="Summary-avatar">
+            <img src={SummaryMiss} alt="Total" />
+            <span> Tổng số cuộc Missed</span>
+          </div>
+          <div className="Summary-number">0</div>
+        </div>
+        <div className="Summary-item">
+          <div className="Summary-avatar">
+            <img src={SummaryFail} alt="Total" />
+            <span> Tổng số cuộc Failed</span>
+          </div>
+          <div className="Summary-number">0</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Summary;

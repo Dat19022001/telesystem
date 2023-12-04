@@ -1,0 +1,113 @@
+.information {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 24px;
+  background: #f8fcff;
+  .information-content {
+    display: flex;
+    gap: 80px;
+  }
+  .information-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 20%;
+    position: relative;
+    .information-img {
+      width: 140px;
+      height: 140px;
+    }
+    .information-edit {
+      position: absolute;
+      bottom: 29%;
+      right: 31%;
+      display: flex;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #1c89ed;
+      img {
+        width: 16px;
+        height: 16px;
+        color: #f8fcff;
+      }
+    }
+    p {
+      color: #000;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      opacity: 0.8;
+      margin: 0;
+    }
+  }
+  .information-form {
+    width: 70%;
+    .information-item {
+      display: flex;
+      gap: 40px;
+    }
+    .information-input {
+      width: 100%;
+    }
+  }
+  .information-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .information-btn {
+      border-radius: 8px;
+      border: 1px solid #3bb347;
+      display: flex;
+      padding: 10px 16px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #3bb347;
+      font-family: Roboto;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      background: #F3FFF4;
+    }
+  }
+  .information-pass {
+    display: flex;
+    align-items: center;
+    position: relative;
+    input {
+      width: 100%;
+    }
+  }
+  .information-change {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 41px;
+    padding: 4px 16px 4px 24px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(8, 107, 199, 0.1);
+    gap: 4px;
+    cursor: pointer;
+    p {
+      margin: 0;
+      color: #086bc7;
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}

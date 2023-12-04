@@ -1,0 +1,10 @@
+.home{
+  box-sizing: border-box;
+  .home-content{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 36px 23px;
+    gap: 20px;
+  }
+}

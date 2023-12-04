@@ -1,0 +1,41 @@
+.Setting {
+  .Setting-menu {
+    display: flex;
+    height: 71px;
+    padding: 0px 44px;
+    align-items: center;
+    gap: 57px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .Setting-item {
+    opacity: 0.6;
+    color: #000;
+    font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+  }
+  .active {
+    position: relative;
+    color: #C10A11;
+    font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    &::after {
+      content: "";
+      background-image: url("../../asset/Ellipse\ 65.png");
+      position: absolute;
+      bottom: -50%;
+      left: 44%;
+      width: 8px;
+      height: 8px;
+    }
+  }
+  .Setting-content{
+    padding: 24px;
+  }
+}

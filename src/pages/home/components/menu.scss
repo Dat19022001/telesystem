@@ -1,0 +1,117 @@
+.menu {
+  display: flex;
+  height: 71px;
+  padding: 0px 44px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  .menu-left {
+    display: flex;
+    align-items: center;
+    gap: 57px;
+  }
+  .menu-item {
+    opacity: 0.6;
+    color: #000;
+    font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .active {
+    position: relative;
+    color: #C10A11;
+    font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    &::after {
+      content: "";
+      background-image: url("../../../asset/Ellipse\ 65.png");
+      position: absolute;
+      bottom: -50%;
+      left: 44%;
+      width: 8px;
+      height: 8px;
+    }
+  }
+  .menu-time {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    padding: 11px 22px;
+    align-items: flex-start;
+    gap: 14px;
+    span {
+      color: #000;
+      font-family: Roboto;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      opacity: 0.6;
+      margin: 0;
+    }
+  }
+  .menu-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .menu-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .menu-input {
+    border-radius: 8px;
+    border: 1px solid rgba(15, 81, 170, 0.3);
+    background: #fff;
+    padding: 8px 8px 8px 30px;
+    &::placeholder {
+      color: #00143a;
+      font-family: Roboto;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      opacity: 0.8;
+    }
+    &:focus-visible {
+      border: none;
+    }
+  }
+  .menu-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    left: 6px;
+  }
+  .menu-excel {
+    display: flex;
+    padding: 4px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-radius: 2px;
+    border: 0.5px solid #0f51aa;
+    background: rgba(240, 249, 255, 0.48);
+    img {
+      width: 28px;
+      height: 28px;
+    }
+    span {
+      color: #0f51aa;
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      margin: 0;
+    }
+  }
+}

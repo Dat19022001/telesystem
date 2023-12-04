@@ -1,0 +1,44 @@
+.infoCaller {
+  display: flex;
+  height: 121px;
+  align-items: flex-start;
+  gap: 30px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  .infoCaller-phone {
+    opacity: 0.8;
+    color: #000;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 19px;
+  }
+  .infoCaller-lh {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    p {
+      color: #000;
+      opacity: 0.6;
+      font-family: Roboto;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin: 0;
+    }
+    span {
+      margin: 0;
+      color: #000;
+      opacity: 0.4;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
