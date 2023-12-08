@@ -4,11 +4,13 @@ import sessions from './sessions';
 import sessionHistory from './sessionHistory';
 import userStatus from './userStatus';
 import notifications from './notifications';
+import appReduce from './appReduce';
 
 export default combineReducers({
 	user,
 	sessions,
 	sessionHistory,
 	userStatus,
-	notifications
+	notifications,
+	appReduce,
 });

@@ -1,5 +1,10 @@
 .home{
   box-sizing: border-box;
+  width: 100%;
+  // display: flex;
+  .home-body{
+    margin-left: 88px;
+  }
   .home-content{
     width: 100%;
     display: flex;

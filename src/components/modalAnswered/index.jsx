@@ -1,7 +1,6 @@
 import Rectangle from "../../asset/Rectangle 1.png";
 import Setting from "../../asset/lets-icons_setting-line-light.png";
 import Polygon from "../../asset/Polygon 2.png";
-
 import Micro from "../../asset/MicrophoneSlash.png";
 import Pause from "../../asset/Pause.png";
 import DotsNine from "../../asset/DotsNine.png";
@@ -9,32 +8,36 @@ import Share from "../../asset/ShareNetwork.png";
 import Plus from "../../asset/Plus.png";
 import Widget from "../../asset/Widget.png";
 import Call from "../../asset/Call-off.png";
-import Acount from "../../asset/User Rounded.png";
+import Account from "../../asset/User Rounded.png";
 import "./style.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { setAnswered, setCall } from "../../redux/slice/appReduce";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import MediaView from "./components/MediaView";
+import { useContext} from "react";
+import SipCallerContext from "../../sipCallerContext";
+
 
 const ModalAnswered = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const{answered} = useSelector(states => states.appReduce);
-  const handleClose = () => {
-    dispatch(setAnswered(false))
-    dispatch(setCall(false))
-    navigate("/", { replace: true });
-  }
+  const sipCaller = useContext(SipCallerContext);
+  const sessions = useSelector((states) => states.sessions);
+  const { currentSession } = useSelector((states) => states.userStatus);
+  const session = sessions[currentSession];
+  
   return (
-    <div className={`modal answered ${answered ? "answered-active":""}`}>
+    <div
+      className={`modal answered ${
+        session && session.remoteStream ? "answered-active" : ""
+      }`}
+    >
       <div className="modal-title">
         <div className="modal-name">Le Thi Soa</div>
         <div className="modal-icon">
-          <img className="modal-rectangle" src={Rectangle} alt="Rectangle" />
+          <img className="modal-rectangle" src={Rectangle} alt="Rectangle" style={{cursor:"pointer"}} />
           <img className="modal-setting" src={Setting} alt="Setting" />
           <img className="modal-polygon" src={Polygon} alt="Polygon" />
         </div>
       </div>
-      <div className="modal-content">
+      <div className={`modal-content`}>
         <div className="modal-info">
           <div className="modal-header">
             <p>Đã Trả lời</p>
@@ -47,6 +50,10 @@ const ModalAnswered = () => {
           <span className="modal-phone">via</span>
           <strong>842873030065</strong>
         </div>
+        {session && session.remoteStream && (
+          <MediaView mediaStream={session.remoteStream} />
+        )}
+
         <div className="answered-tool">
           <img src={Micro} alt="Micro" />
           <img src={Pause} alt="Pause" />
@@ -60,9 +67,14 @@ const ModalAnswered = () => {
           <p className="modal-InfoName"> Camp: 98122</p>
         </div>
         <div className="answered-footer">
-          <img   src={Widget} alt="Rectangle" />
-          <img className="answered-call" src={Call} alt="Setting" onClick={()=> handleClose()} />
-          <img src={Acount} alt="Polygon" />
+          <img src={Widget} alt="Rectangle" />
+          <img
+            className="answered-call"
+            src={Call}
+            alt="Setting"
+            onClick={() => sipCaller.terminate(session.sipSession)}
+          />
+          <img src={Account} alt="Polygon" />
         </div>
       </div>
     </div>

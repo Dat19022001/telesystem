@@ -5,41 +5,32 @@ import Calling from "../../asset/Calling.png";
 import Avatar from "../../asset/Image-60.png";
 import Checkbox from "../../asset/checkbox.png";
 import "./header.scss";
-// import SipCaller from "../../sipCaller";
-import { useDispatch, useSelector} from "react-redux";
-import { setOpenModal } from "../../redux/slice/appReduce";
+import { useDispatch } from "react-redux";
 import Form from "../form";
+import { setCall } from "../../reducers/appReduce";
 // import {
 //   setDisplayName,
 //   setOutboundProxy,
 //   setPassword,
 //   setSipUri,
 // } from "../../actions/stateActions";
+
 const Header = () => {
   // const sipCaller = new SipCaller();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const Register = (sipUri, password, displayName, outboundProxy) => {
   //   dispatch(setDisplayName({ displayName: displayName }));
-  //   dispatch(setSipUri({sipUri: sipUri}));
-  //   dispatch(setPassword({password: password}));
-  //   dispatch(setOutboundProxy({outboundProxy: outboundProxy}));
+  //   dispatch(setSipUri({ sipUri: sipUri }));
+  //   dispatch(setPassword({ password: password }));
+  //   dispatch(setOutboundProxy({ outboundProxy: outboundProxy }));
   //   sipCaller.register();
   // };
-  // const Call = (requestUri) => {
-  //   // console.log(sipCaller)
-  //   sipCaller.invite(requestUri, "1");
-  // };
-  const {openModal} = useSelector(states => states.appReduce)
-  const dispatch = useDispatch()
-  const handleOpen = ()=> {
-    dispatch(setOpenModal(!openModal))
-  }
+
   return (
     <div className="header">
-      <Form/>
+      <Form />
       <div className="header-select">
         <div className="header-checkbox">
-          {/* <input type="checkbox" /> */}
           <img className="header-input" src={Checkbox} alt="checkbox" />
           <label>Sẵn sàng</label>
         </div>
@@ -56,8 +47,8 @@ const Header = () => {
         className="header-Notification"
         // onClick={() =>
         //   Register(
-        //     "sip:dat@192.168.12.21",
-        //     "dat",
+        //     // displayName,
+        //     // password,
         //     "Dat",
         //     "wss://fsivietnam.com.vn:8089/ws"
         //   )
@@ -67,7 +58,9 @@ const Header = () => {
       </div>
       <div
         className="header-call"
-        onClick={() => handleOpen()}
+        onClick={() => {
+          dispatch(setCall(true))
+        }}
       >
         <img src={Calling} alt="Calling" />
       </div>

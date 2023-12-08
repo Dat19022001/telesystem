@@ -57,6 +57,7 @@ const ChartsPage = () => {
           cx="50%"
           cy="50%"
           outerRadius={120}
+          label
         />
       </PieChart>
     </div>

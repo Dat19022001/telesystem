@@ -4,13 +4,13 @@ import SummaryAnswer from "../../../asset/SummaryAnser.png";
 import SummaryMiss from "../../../asset/SummaryMiss.png";
 import SummaryFail from "../../../asset/SummaryFail.png";
 import "./summary.scss";
-const Summary = () => {
+const Summary = ({data}) => {
   return (
     <div className="Summary">
       <div className="Summary-title">
         <div className="Summary-name">Cuộc gọi</div>
         <div className="Summary-time">
-          <p>Last updated: 17:23:27</p>
+          <p>Last updated: {data.last_update}</p>
         </div>
       </div>
       <div className="Summary-content">
@@ -26,28 +26,28 @@ const Summary = () => {
             <img src={SummaryTime} alt="Total" />
             <span> Tổng thời gian</span>
           </div>
-          <div className="Summary-number">00:14:01</div>
+          <div className="Summary-number">{data.total_time}</div>
         </div>
         <div className="Summary-item">
           <div className="Summary-avatar">
             <img src={SummaryAnswer} alt="Total" />
             <span> Tổng số cuộc Answered</span>
           </div>
-          <div className="Summary-number">0</div>
+          <div className="Summary-number">{data.total_answered}</div>
         </div>
         <div className="Summary-item">
           <div className="Summary-avatar">
             <img src={SummaryMiss} alt="Total" />
             <span> Tổng số cuộc Missed</span>
           </div>
-          <div className="Summary-number">0</div>
+          <div className="Summary-number">{data.total_missed}</div>
         </div>
         <div className="Summary-item">
           <div className="Summary-avatar">
             <img src={SummaryFail} alt="Total" />
             <span> Tổng số cuộc Failed</span>
           </div>
-          <div className="Summary-number">0</div>
+          <div className="Summary-number">{data.total_failed}</div>
         </div>
       </div>
     </div>

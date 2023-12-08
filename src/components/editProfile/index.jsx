@@ -7,7 +7,6 @@ import { setEditProfile } from "../../redux/slice/appReduce";
 const EditProfile = () => {
   const dispatch = useDispatch()
   const {editProfile} = useSelector(states => states.appReduce)
-  console.log(editProfile)
   const handClose = () => {
     dispatch(setEditProfile(false))
   }

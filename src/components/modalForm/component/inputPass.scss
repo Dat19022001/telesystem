@@ -1,0 +1,49 @@
+.inputPass {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 380px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  // border: 1px solid #212121;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  label {
+    display: block;
+    color: #424242;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18.06px;
+  }
+  input {
+    width: 100%;
+    color: #616161 ;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28.16px;
+    padding: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    &:focus-visible {
+      outline: none;
+    }
+    &::placeholder {
+      color: #616161;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28.16px;
+    }
+  }
+  .inputPass-content{
+    width: 80%;
+  }
+}

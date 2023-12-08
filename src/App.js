@@ -1,5 +1,4 @@
-import Header from "./components/header/header";
-import Sidebar from "./components/sidebar/sidebar";
+
 import { BrowserRouter as Router } from "react-router-dom";
 import "./app.scss";
 import Modal from "./components/modal/modal";
@@ -9,14 +8,16 @@ import ModalWaring from "./components/modalWaring";
 import ChangePass from "./components/modalChangePass";
 import AppRouters from "./config/appRouter";
 import ModalAnswered from "./components/modalAnswered";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import ModalNumber from "./components/modalNumber";
 function App() {
   return (
     <div className="App">
+      <ToastContainer className="foo" />
       <Router>
         <div className="App-content">
-          <Sidebar />
           <div className="App-right" style={{ position: "relative" }}>
-            <Header />
             <AppRouters />
             <Modal />
             <EditProfile />
@@ -24,6 +25,7 @@ function App() {
             <ModalWaring />
             <ChangePass />
             <ModalAnswered />
+            <ModalNumber/>
           </div>
         </div>
       </Router>

@@ -4,25 +4,25 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import store from "./redux/store";
-// import { store } from "./store";
-// // import SipCallerContext from "./sipCallerContext";
-// import SipCaller from "./sipCaller";
-// import * as serviceWorker from './serviceWorker';
+// import store from "./redux/store";
+import { store } from "./store";
+import SipCallerContext from "./sipCallerContext";
+import SipCaller from "./sipCaller";
+import * as serviceWorker from './serviceWorker';
 
-// let sipCaller;
+let sipCaller;
 
-// SipCaller.init({ store });
-// sipCaller = new SipCaller();
-// global.sipCaller = sipCaller;
+SipCaller.init({ store });
+sipCaller = new SipCaller();
+global.sipCaller = sipCaller;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <SipCallerContext.Provider value={sipCaller}> */}
+      <SipCallerContext.Provider value={sipCaller}>
         <App />
-      {/* </SipCallerContext.Provider> */}
+      </SipCallerContext.Provider>
     </Provider>
   </React.StrictMode>
 );
@@ -31,4 +31,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-// serviceWorker.register();
+serviceWorker.register();

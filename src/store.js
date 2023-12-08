@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
@@ -19,18 +19,18 @@ const reduxMiddlewares =
 	thunk
 ];
 
-if (process.env.NODE_ENV !== 'production')
-{
-	const reduxLogger = createLogger(
-		{
-			duration  : true,
-			timestamp : false,
-			level     : 'log',
-			logErrors : true
-		});
+// if (process.env.NODE_ENV !== 'production')
+// {
+// 	const reduxLogger = createLogger(
+// 		{
+// 			duration  : true,
+// 			timestamp : false,
+// 			level     : 'log',
+// 			logErrors : true
+// 		});
 
-	reduxMiddlewares.push(reduxLogger);
-}
+// 	reduxMiddlewares.push(reduxLogger);
+// }
 
 const pReducer = persistReducer(persistConfig, rootReducer);
 

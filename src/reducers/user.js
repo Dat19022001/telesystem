@@ -4,7 +4,7 @@ const initialState = {
   password: null,
   outboundProxy: null,
   autoRegister: false,
-  videoEnabled: true,
+  videoEnabled: false,
   requestUri: null,
   transferUri: null,
   CallerId: null,

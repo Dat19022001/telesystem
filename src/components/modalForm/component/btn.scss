@@ -1,0 +1,17 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  width: 380px;
+  border-radius: 16px;
+  background: var(--main, #c10a11);
+  color:  #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28.16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}

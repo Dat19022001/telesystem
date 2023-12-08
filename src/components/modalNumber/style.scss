@@ -1,0 +1,104 @@
+.number {
+  .number-body {
+    padding-bottom: 50px;
+  }
+  .number-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    input {
+      color: #000;
+      font-family: Roboto;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      border: none;
+      &:focus-visible {
+        outline: none;
+      }
+      &::placeholder {
+        color: #000;
+        font-family: Roboto;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+  .number-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .number-item {
+    width: 30%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px;
+    flex-direction: column;
+    border-radius: 10px;
+    background: #f8f8f8;
+
+    color: #4277ff;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    span {
+      color: #000;
+
+      text-align: center;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+  .number-phone {
+    span {
+      display: block;
+      color: #000;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+      opacity: 0.4;
+      margin-bottom: 10px;
+    }
+  }
+  .phone-item {
+    padding: 12px 17px;
+    border-radius: 11px;
+    background: #f2f6ff;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    p {
+      color: #000;
+      margin-bottom: 5px;
+    }
+    strong {
+      color: #3967dd;
+      opacity: 0.5;
+    }
+  }
+}
+.number-active{
+  display: block;
+}

@@ -17,12 +17,12 @@ const Sidebar = () => {
           {/* <img src={Logo} alt="logo" /> */}
         </div>
         <div className="sidebar-item active">
-          <Link to="/">
+          <Link to="/dashboard">
             <img src={Home} alt="Home" />
           </Link>
         </div>
         <div className="sidebar-item">
-          <Link to="/form">
+          <Link to="/">
             <img src={HamburgerMenu} alt="Home" />
           </Link>
         </div>

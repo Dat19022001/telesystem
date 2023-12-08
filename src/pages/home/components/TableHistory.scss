@@ -1,12 +1,13 @@
 .history {
-  width: 70%;
+  width: 65%;
   box-sizing: border-box;
   .history-table {
     border-spacing: 0px;
+    width: 100%;
   }
   .history-header {
     th {
-      padding: 16px 22px;
+      padding: 16px 18px;
       border: 1px solid rgba(0, 0, 0, 0.2);
       background: #f2f3f5;
       color: #000;
@@ -20,7 +21,7 @@
     }
   }
   td {
-    padding: 16px 22px;
+    padding: 16px 18px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     color: #000;
     font-family: Roboto;
@@ -44,7 +45,7 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     background: rgba(217, 225, 231, 0.3);
   }
-  .history-tota {
+  .history-total {
     color: #000;
     font-family: Roboto;
     font-size: 14px;
@@ -56,6 +57,9 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    .ant-pagination-options{
+      display: none;
+    }
   }
   .history-select {
     display: flex;
