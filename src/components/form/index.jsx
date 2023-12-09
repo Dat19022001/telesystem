@@ -49,7 +49,7 @@ const Form = () => {
               <img src={Logo2} alt="logo" />
             )}
 
-            <p>Cuộc gọi từ {tab.phone}</p>
+            <p> {`Cuộc gọi từ ${tab.phone}`}</p>
           </div>
           <img src={Close} alt="Close" onClick={() => closeTab(tab.id)} />
         </div>

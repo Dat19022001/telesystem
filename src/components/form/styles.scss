@@ -4,17 +4,21 @@
   left: 10px;
   display: none;
   gap: 10px;
+  width: 800px;
+  box-sizing: border-box;
   .form-item {
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     padding: 10px 12px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     border-radius: 12px 12px 0px 0px;
     background: #E3E3E3;
+    overflow: hidden;
     p {
       margin: 0;
+      display: block ;
       overflow: hidden;
       color: #000;
       text-overflow: ellipsis;
@@ -22,7 +26,7 @@
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
-      line-height: normal;
+      white-space: nowrap
     }
   }
   .form-active{

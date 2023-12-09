@@ -171,10 +171,11 @@ export default class SipCaller {
       }
     });
 
-    // sipSession.on("directionChanged", () => {
-    //   const newDirection = sipSession.sessionDescriptionHandler.getDirection();
+    sipSession.on("directionChanged", () => {
+      const newDirection = sipSession.sessionDescriptionHandler.getDirection();
+      console.log(newDirection)
 
-    // });
+    });
 
     sipSession.on("progress", (response) => {
       store.dispatch(
