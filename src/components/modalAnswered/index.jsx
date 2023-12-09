@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import MediaView from "./components/MediaView";
 import { useContext} from "react";
 import SipCallerContext from "../../sipCallerContext";
+import * as sessionStates from "../../sessionStates";
 
 
 const ModalAnswered = () => {
@@ -22,11 +23,11 @@ const ModalAnswered = () => {
   const sessions = useSelector((states) => states.sessions);
   const { currentSession } = useSelector((states) => states.userStatus);
   const session = sessions[currentSession];
-  
+  // console.log(session)
   return (
     <div
       className={`modal answered ${
-        session && session.remoteStream ? "answered-active" : ""
+        session && session.remoteStream && session.sessionState === sessionStates.ACCEPTED ? "answered-active" : ""
       }`}
     >
       <div className="modal-title">

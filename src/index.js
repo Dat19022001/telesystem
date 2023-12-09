@@ -11,7 +11,6 @@ import SipCaller from "./sipCaller";
 import * as serviceWorker from './serviceWorker';
 
 let sipCaller;
-
 SipCaller.init({ store });
 sipCaller = new SipCaller();
 global.sipCaller = sipCaller;

@@ -11,7 +11,15 @@ import ModalAnswered from "./components/modalAnswered";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import ModalNumber from "./components/modalNumber";
+import { useSelector } from "react-redux";
+import { useContext } from "react";
+import SipCallerContext from "./sipCallerContext";
 function App() {
+  const {autoRegister} = useSelector(states => states.user)
+  const sipCaller = useContext(SipCallerContext)
+  if(autoRegister){
+    sipCaller.register()
+  }
   return (
     <div className="App">
       <ToastContainer className="foo" />

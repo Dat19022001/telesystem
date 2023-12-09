@@ -3,13 +3,10 @@ import * as stateActions from "./actions/stateActions";
 import * as requestActions from "./actions/requestActions";
 import * as sessionStates from "./sessionStates";
 
-// import useNotify from "./hook/useNotify"
-// import Logger from "./logger";
-
 // const logger = new Logger("SipCaller");
 
 let store;
- 
+
 // let notify =  useNotify();
 export default class SipCaller {
   /**
@@ -19,8 +16,6 @@ export default class SipCaller {
   static init(data) {
     store = data.store;
   }
-  
-
 
   constructor() {
     this._ua = null;
@@ -71,8 +66,7 @@ export default class SipCaller {
         stateActions.setRegistrationMessage({ registrationMessage: "Success" })
       );
       store.dispatch(stateActions.setRegistered({ registered: true }));
-      
-      // notify.success("Đăng nhập thành công");
+
     });
 
     this._ua.on("registrationFailed", (response, cause) => {
@@ -264,8 +258,6 @@ export default class SipCaller {
       );
 
       setTimeout(() => {
-
-
         store.dispatch(stateActions.removeSession({ sipSession }));
 
         if (!store.getState().userStatus.currentSession) {
@@ -286,13 +278,13 @@ export default class SipCaller {
   }
 
   accept(sipSession) {
-    // const { videoEnabled } = store.getState().user;
+    const { videoEnabled } = store.getState().user;
 
     sipSession.accept({
       sessionDescriptionHandlerOptions: {
         constraints: {
           audio: true,
-          video: false,
+          video: videoEnabled,
         },
       },
     });
@@ -303,14 +295,13 @@ export default class SipCaller {
   }
 
   invite(sipUri, callerId) {
-    // const { videoEnabled } = store.getState().user;
-    
+    const { videoEnabled } = store.getState().user;
 
     const sipSession = this._ua.invite(sipUri, {
       sessionDescriptionHandlerOptions: {
         constraints: {
           audio: true,
-          video: false,
+          video: videoEnabled,
         },
       },
       params: {

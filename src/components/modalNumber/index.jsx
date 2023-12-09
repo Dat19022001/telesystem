@@ -47,28 +47,28 @@ const ModalNumber = () => {
             <span>DEF</span>
           </div>
           <div className="number-item">
-            <p>1</p>
-            <span></span>
+            <p>4</p>
+            <span>GHI</span>
           </div>
           <div className="number-item">
-            <p>2</p>
-            <span>ABC</span>
+            <p>5</p>
+            <span>JKL</span>
           </div>
           <div className="number-item">
-            <p>3</p>
-            <span>DEF</span>
+            <p>6</p>
+            <span>MNO</span>
           </div>
           <div className="number-item">
-            <p>1</p>
-            <span></span>
+            <p>7</p>
+            <span>PQRS</span>
           </div>
           <div className="number-item">
-            <p>2</p>
-            <span>ABC</span>
+            <p>8</p>
+            <span>TUV</span>
           </div>
           <div className="number-item">
-            <p>3</p>
-            <span>DEF</span>
+            <p>9</p>
+            <span>WXYZ</span>
           </div>
           <div className="number-item">
             <p>*</p>
@@ -76,7 +76,7 @@ const ModalNumber = () => {
           </div>
           <div className="number-item">
             <p>0</p>
-            <span>ABC</span>
+            <span></span>
           </div>
           <div className="number-item">
             <p>#</p>
