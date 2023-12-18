@@ -1,7 +1,7 @@
 .Setting {
   width: 100%;
   .Setting-body{
-    margin-left: 88px;
+    margin-left: 82px;
   }
   .Setting-menu {
     display: flex;
@@ -21,7 +21,7 @@
     line-height: normal;
     cursor: pointer;
   }
-  .active {
+  .Setting-active {
     position: relative;
     color: #C10A11;
     font-family: Roboto;

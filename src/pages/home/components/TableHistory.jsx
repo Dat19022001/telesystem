@@ -29,30 +29,32 @@ const TableHistory = ({ data }) => {
           <th style={{ width: 74 }}>Ghi chú</th>
           <th style={{ width: 106 }}>Form nhập</th>
         </tr>
-        {data.records.map((record, index) => (
-          <tr key={index}>
-            <td>{record.stt}</td>
-            <td>{record.agent}</td>
-            <td>{record.mobile}</td>
-            <td>{record.calldate}</td>
-            <td>{record.status}</td>
-            <td>
-              <div className="history-img">
-                <img src={Record} alt="record" />
-              </div>
-            </td>
-            <td>
-              <div className="history-img">
-                <img src={Note} alt="Note" />
-              </div>
-            </td>
-            <td>
-              <div className="history-img">
-                <img src={Form} alt="Note" />
-              </div>
-            </td>
-          </tr>
-        ))}
+        <tbody>
+          {data.records.map((record, index) => (
+            <tr key={index}>
+              <td>{record.stt}</td>
+              <td>{record.agent}</td>
+              <td>{record.mobile}</td>
+              <td>{record.calldate}</td>
+              <td>{record.status}</td>
+              <td>
+                <div className="history-img">
+                  <img src={Record} alt="record" />
+                </div>
+              </td>
+              <td>
+                <div className="history-img">
+                  <img src={Note} alt="Note" />
+                </div>
+              </td>
+              <td>
+                <div className="history-img">
+                  <img src={Form} alt="Note" />
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
       <div className="history-subTable">
         <p className="history-total">Có tổng: {data.total_records} bản ghi</p>

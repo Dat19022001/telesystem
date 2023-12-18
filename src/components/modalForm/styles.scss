@@ -1,7 +1,7 @@
 .ModalForm {
   display: block;
   height: 100vh;
-  background-image: url("../../asset//Rectangle.png");
+  background-image: url("../../asset/Rectangle\ .png");
   background-repeat: no-repeat;
   padding: 33px 69px;
   position: relative;
@@ -15,6 +15,7 @@
       font-style: normal;
       font-weight: 900;
       line-height: 35.2px;
+      font-family: Roboto;
     }
   }
   .ModalForm-form {
@@ -40,6 +41,7 @@
       font-weight: 700;
       line-height: 37.5px;
       margin-bottom: 5px;
+      font-family: Roboto;
     }
     p {
       color: #757575;

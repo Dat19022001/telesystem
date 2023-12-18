@@ -24,7 +24,7 @@ const Profile = () => {
       <Sidebar/>
       <div className="Profile-body">
         <Header/>
-        <MenuProfile />
+        <MenuProfile/>
         <div className="Profile-content" style={{ display: "flex" }}>
           <Contract />
           {form === "1" && <Form1 />}

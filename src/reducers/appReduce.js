@@ -9,6 +9,8 @@ const initialState = {
   tabs: [],
   call: false,
   formId: null,
+  autoReceived: false,
+  test: null,
 };
 
 const appReducer = createSlice({
@@ -36,11 +38,20 @@ const appReducer = createSlice({
     setDeleteTab: (states, action) => {
       states.tabs = states.tabs.filter((item) => item.id !== action.payload);
     },
+    setCleanTab: (states, action) => {
+      states.tabs = action.payload;
+    },
     setCall: (states, action) => {
       states.call = action.payload;
     },
     setFormId: (states, action) => {
       states.formId = action.payload;
+    },
+    setAutoReceived: (states, action) => {
+      states.autoReceived = action.payload;
+    },
+    setTest: (states, action) => {
+      states.test = action.payload;
     },
   },
 });
@@ -55,5 +66,8 @@ export const {
   setCall,
   setDeleteTab,
   setFormId,
+  setAutoReceived,
+  setCleanTab,
+  setTest,
 } = appReducer.actions;
 export default appReducer.reducer;

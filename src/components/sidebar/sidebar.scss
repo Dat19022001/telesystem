@@ -10,19 +10,25 @@
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
-  background: #194464;
+  background: var(--main, #C10A11);
   .sidebar-logo {
     width: 65.902px;
     height: 60px;
     flex-shrink: 0;
     margin-bottom: 20px;
-    background: url("../../asset/logo.png"), lightgray 50% / contain no-repeat;
+    img{
+      width: 45px;
+    }
   }
   .sidebar-item {
     display: flex;
     padding: 10px 17px;
     justify-content: center;
     align-items: center;
+    border-radius: 4px;
+    // &:hover{
+    //   background-color: var(--pattern,#FFF);
+    // }
     img {
       width: 28px;
       height: 28px;
@@ -35,6 +41,6 @@
   }
   .active {
     border-radius: 4px;
-    background: #617c8f;
+    background: var(--pattern, #FFF);
   }
 }

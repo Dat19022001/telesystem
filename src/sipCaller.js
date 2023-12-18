@@ -3,11 +3,9 @@ import * as stateActions from "./actions/stateActions";
 import * as requestActions from "./actions/requestActions";
 import * as sessionStates from "./sessionStates";
 
-// const logger = new Logger("SipCaller");
-
 let store;
+let Answer;
 
-// let notify =  useNotify();
 export default class SipCaller {
   /**
    * @param  {Object} data
@@ -15,11 +13,11 @@ export default class SipCaller {
    */
   static init(data) {
     store = data.store;
+    Answer = data.Answer;
   }
 
   constructor() {
     this._ua = null;
-
     this._init();
   }
 
@@ -28,6 +26,7 @@ export default class SipCaller {
 
     if (autoRegister) this.register();
   }
+
   // đăng ký Ua để nhận các yêu cầu đến
   register() {
     const { displayName, sipUri, password, outboundProxy } =
@@ -35,6 +34,7 @@ export default class SipCaller {
 
     // This is inserted in config.js in index.html
     const iceServers = window.iceServers;
+    const { autoReceived } = store.getState().appReduce;
 
     store.dispatch(stateActions.setRegisterInProgress());
 
@@ -55,6 +55,12 @@ export default class SipCaller {
       },
     });
 
+    if (autoReceived) {
+      this._ua.on("invite", (session) => {
+        session.accept();
+        Answer()
+      });
+    }
     this._ua.on("registered", () => {
       store.dispatch(
         requestActions.notify({
@@ -66,7 +72,6 @@ export default class SipCaller {
         stateActions.setRegistrationMessage({ registrationMessage: "Success" })
       );
       store.dispatch(stateActions.setRegistered({ registered: true }));
-
     });
 
     this._ua.on("registrationFailed", (response, cause) => {
@@ -173,8 +178,7 @@ export default class SipCaller {
 
     sipSession.on("directionChanged", () => {
       const newDirection = sipSession.sessionDescriptionHandler.getDirection();
-      console.log(newDirection)
-
+      console.log(newDirection);
     });
 
     sipSession.on("progress", (response) => {

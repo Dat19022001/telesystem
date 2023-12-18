@@ -32,7 +32,8 @@
     "sip.js": "^0.13.0",
     "source-map-explorer": "^2.5.3",
     "uuid": "^9.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

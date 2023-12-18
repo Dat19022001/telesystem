@@ -5,22 +5,22 @@ import CallAgree from "../../asset/CallAgree.png";
 import Widget from "../../asset/Widget.png";
 import Account from "../../asset/User Rounded.png";
 import Close from "../../asset/Close_square_light.png";
-import "./style.scss"
+import "./style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useContext } from "react";
 import SipCallerContext from "../../sipCallerContext";
 import { setCall } from "../../reducers/appReduce";
 const ModalNumber = () => {
-  const {call} = useSelector(states => states.appReduce)
+  const { call } = useSelector((states) => states.appReduce);
   const sipCaller = useContext(SipCallerContext);
-  const dispatch = useDispatch()
-   const Call = (requestUri) => {
+  const dispatch = useDispatch();
+  const Call = (requestUri) => {
     sipCaller.invite(requestUri, "1");
-    dispatch(setCall(false))
+    dispatch(setCall(false));
   };
   return (
     <div className={`answered modal number ${call ? "number-active" : ""}`}>
-      <div className="modal-title" onClick={()=>  dispatch(setCall(false))}>
+      <div className="modal-title">
         <div className="modal-name">Le Thi Soa</div>
         <div className="modal-icon">
           <img className="modal-rectangle" src={Rectangle} alt="Rectangle" />
@@ -98,7 +98,7 @@ const ModalNumber = () => {
           className="answered-call"
           src={CallAgree}
           alt="Setting"
-          style={{top: -25,left:"38%"}}
+          style={{ top: -25, left: "38%" }}
           onClick={() => Call("sip:webrtc_client@192.168.16.21")}
         />
         <img src={Account} alt="Polygon" />

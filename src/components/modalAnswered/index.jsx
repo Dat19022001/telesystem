@@ -13,27 +13,35 @@ import "./style.scss";
 import { useSelector } from "react-redux";
 
 import MediaView from "./components/MediaView";
-import { useContext} from "react";
+import { useContext } from "react";
 import SipCallerContext from "../../sipCallerContext";
 import * as sessionStates from "../../sessionStates";
-
 
 const ModalAnswered = () => {
   const sipCaller = useContext(SipCallerContext);
   const sessions = useSelector((states) => states.sessions);
   const { currentSession } = useSelector((states) => states.userStatus);
   const session = sessions[currentSession];
-  console.log(session)
+
   return (
     <div
       className={`modal answered ${
-        session && session.remoteStream && (session.sessionState === sessionStates.ACCEPTED) ? "answered-active" : ""
+        session &&
+        session.remoteStream &&
+        session.sessionState === sessionStates.ACCEPTED
+          ? "answered-active"
+          : ""
       }`}
     >
       <div className="modal-title">
         <div className="modal-name">Le Thi Soa</div>
         <div className="modal-icon">
-          <img className="modal-rectangle" src={Rectangle} alt="Rectangle" style={{cursor:"pointer"}} />
+          <img
+            className="modal-rectangle"
+            src={Rectangle}
+            alt="Rectangle"
+            style={{ cursor: "pointer" }}
+          />
           <img className="modal-setting" src={Setting} alt="Setting" />
           <img className="modal-polygon" src={Polygon} alt="Polygon" />
         </div>

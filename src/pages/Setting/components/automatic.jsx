@@ -6,30 +6,30 @@ import Polygon from "../../../asset/Polygon 2.png";
 import Call from "../../../asset/Call.png";
 import CallAgree from "../../../asset/CallAgree.png";
 import "./automatic.scss";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCollapse } from "../../../redux/slice/appReduce";
+import { setAutoReceived } from "../../../reducers/appReduce";
 
 const Automatic = () => {
-  const [collapse, SetCollapse] = useState("false");
+  const {autoReceived,collapse} = useSelector(states => states.appReduce)
   const dispatch = useDispatch()
-  const onChange = (checked) => {
-    SetCollapse(checked);
+  const onCollapse = (checked) => {
     dispatch(setCollapse(checked))
   };
-
-
+  const onAutoReceived = (checked) => {
+    dispatch(setAutoReceived(checked))
+  }
   return (
     <div className="automatic">
       <div className="automatic-body">
         <div className="automatic-content">
           <div className="automatic-item">
             <p>Tự động nhận cuộc gọi đến:</p>
-            <Switch defaultChecked />
+            <Switch checked={autoReceived} onChange={onAutoReceived} />
           </div>
           <div className="automatic-item">
             <p>Sử dựng popup thu gọn</p>
-            <Switch defaultChecked onChange={onChange} />
+            <Switch checked={collapse} onChange={onCollapse} />
           </div>
           <div className="automatic-item">
             <p>Tự động bật form ghi chú</p>

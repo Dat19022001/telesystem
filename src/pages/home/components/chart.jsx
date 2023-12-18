@@ -49,7 +49,7 @@ const ChartsPage = () => {
         </div>
       </div>
       
-      <PieChart width={560} height={400}>
+      <PieChart width={460} height={400}>
         <Pie
           data={data01}
           dataKey="value"

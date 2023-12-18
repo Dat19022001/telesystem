@@ -6,22 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 // import store from "./redux/store";
 import { store } from "./store";
-import SipCallerContext from "./sipCallerContext";
-import SipCaller from "./sipCaller";
-import * as serviceWorker from './serviceWorker';
 
-let sipCaller;
-SipCaller.init({ store });
-sipCaller = new SipCaller();
-global.sipCaller = sipCaller;
+import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <SipCallerContext.Provider value={sipCaller}>
+      <Router>
         <App />
-      </SipCallerContext.Provider>
+      </Router>
     </Provider>
   </React.StrictMode>
 );

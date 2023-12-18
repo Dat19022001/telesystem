@@ -5,27 +5,31 @@ import "./styles.scss";
 import { useDispatch, useSelector } from "react-redux";
 // import { setTab } from "../../redux/slice/appReduce";
 import { useEffect, useState } from "react";
-import { setDeleteTab } from "../../reducers/appReduce";
-// import { useNavigate } from "react-router-dom";
+import { setDeleteTab, setFormId } from "../../reducers/appReduce";
+import { useNavigate } from "react-router-dom";
 const Form = () => {
   const { tabs, formId } = useSelector((states) => states.appReduce);
   const [active, setActive] = useState("");
+  const [close, setClose] = useState(true);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleTab = (id) => {
     setActive(id);
+    dispatch(setFormId(id))
   };
   const closeTab = (id) => {
     dispatch(setDeleteTab(id));
+    if (id === active) {
+      if (tabs.length === 1) {
+        navigate("/dashboard", { replace: true });
+      }
+      dispatch(setFormId(tabs[tabs.length - 1].id));
+      setClose(!close);
+    }
   };
   useEffect(() => {
     setActive(formId);
-  }, [formId]);
-  // useEffect(() => {
-  //   if (tabs.length === 0) {
-  //     navigate("/", { replace: true });
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // },[tabs]);
+  }, [formId, close]);
   return (
     <div className={`form ${tabs.length !== 0 ? "form-check" : ""}`}>
       {tabs.map((tab, index) => (
@@ -51,7 +55,13 @@ const Form = () => {
 
             <p> {`Cuộc gọi từ ${tab.phone}`}</p>
           </div>
-          <img src={Close} alt="Close" onClick={() => closeTab(tab.id)} />
+          <img
+            src={Close}
+            alt="Close"
+            onClick={() => {
+              closeTab(tab.id);
+            }}
+          />
         </div>
       ))}
     </div>

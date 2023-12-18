@@ -6,8 +6,12 @@ import Summary from "./components/summary";
 import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar"
 import "./index.scss";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setCleanTab } from "../../reducers/appReduce";
 
 const Home = () => {
+  const dispatch = useDispatch();
   const data = {
     total_page: "20",
     total_records: "25",
@@ -61,6 +65,10 @@ const Home = () => {
       },
     ],
   };
+  useEffect(()=>{
+    dispatch(setCleanTab([]))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   return (
     <div className="home">
       <Sidebar/>

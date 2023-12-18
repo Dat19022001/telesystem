@@ -4,28 +4,15 @@ import Notification from "../../asset/Notify.png";
 import Calling from "../../asset/Calling.png";
 import Avatar from "../../asset/Image-60.png";
 import Checkbox from "../../asset/checkbox.png";
+import Beak from "../../asset/beak.png";
 import "./header.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Form from "../form";
 import { setCall } from "../../reducers/appReduce";
-// import {
-//   setDisplayName,
-//   setOutboundProxy,
-//   setPassword,
-//   setSipUri,
-// } from "../../actions/stateActions";
 
 const Header = () => {
-  // const sipCaller = new SipCaller();
+  const { autoReceived,call } = useSelector((states) => states.appReduce);
   const dispatch = useDispatch();
-  // const Register = (sipUri, password, displayName, outboundProxy) => {
-  //   dispatch(setDisplayName({ displayName: displayName }));
-  //   dispatch(setSipUri({ sipUri: sipUri }));
-  //   dispatch(setPassword({ password: password }));
-  //   dispatch(setOutboundProxy({ outboundProxy: outboundProxy }));
-  //   sipCaller.register();
-  // };
-
   return (
     <div className="header">
       <Form />
@@ -43,26 +30,23 @@ const Header = () => {
         </div>
         <img className="header-arrow" src={ArrowDown} alt="ArrowDown" />
       </div>
-      <div
-        className="header-Notification"
-        // onClick={() =>
-        //   Register(
-        //     // displayName,
-        //     // password,
-        //     "Dat",
-        //     "wss://fsivietnam.com.vn:8089/ws"
-        //   )
-        // }
-      >
+      <div className="header-Notification">
         <img src={Notification} alt="Notification" />
       </div>
       <div
-        className="header-call"
+        className={`header-call ${autoReceived ? "header-call-active" : ""}  `}
         onClick={() => {
-          dispatch(setCall(true))
+          dispatch(setCall(!call));
         }}
       >
         <img src={Calling} alt="Calling" />
+        <div className="header-hover">
+          <img src={Beak} alt="Beak" />
+          <div className="hover-content">
+            <p>Đã kết nối với:</p>
+            <span>0869394765</span>
+          </div>
+        </div>
       </div>
       <div className="header-acount">
         <img src={Avatar} alt="Avatar" />

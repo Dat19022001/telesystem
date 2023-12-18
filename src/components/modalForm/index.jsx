@@ -1,12 +1,10 @@
-
 import Logo from "../../asset/login.png";
 import "./styles.scss";
 import { Link } from "react-router-dom";
 
-
 const ModalForm = ({ data, children }) => {
   return (
-    <div className="ModalForm container">
+    <div className="ModalForm ">
       <div className="ModalForm-title">
         <img src={Logo} alt="Logo" />
         <p>Techcombank</p>
@@ -15,7 +13,7 @@ const ModalForm = ({ data, children }) => {
         <strong>{data.title}</strong>
         <p>{data.sub}</p>
         {children}
-        
+
         {data.title === "Đăng nhập" ? (
           <div className="ModalForm-register">
             Chưa có tài khoản?

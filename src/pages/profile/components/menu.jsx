@@ -1,6 +1,12 @@
+// import { useDispatch } from "react-redux";
 import Cell from "../../../asset/Cell 2.png";
 import "./menu.scss"
-const MenuProfile = () => {
+// import { setDeleteTab } from "../../../reducers/appReduce";
+const MenuProfile = ({formId}) => {
+  // const dispatch = useDispatch()
+  // const deleteForm = () => {
+  //   dispatch(setDeleteTab(formId))
+  // }
   return (
     <div className="menuProfile">
       <img src={Cell} alt="cell" />

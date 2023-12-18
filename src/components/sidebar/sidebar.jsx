@@ -8,13 +8,14 @@ import Activity from "../../asset/Activity.png";
 import Message from "../../asset/Message.png";
 import Work from "../../asset/Work.png";
 import Setting from "../../asset/Setting.png";
+import Logo from "../../asset/Logo 2.png"
 import "./sidebar.scss"
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-menu">
         <div className="sidebar-logo">
-          {/* <img src={Logo} alt="logo" /> */}
+          <img src={Logo} alt="logo" />
         </div>
         <div className="sidebar-item active">
           <Link to="/dashboard">
