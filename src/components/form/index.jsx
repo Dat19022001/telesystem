@@ -1,4 +1,4 @@
-import Logo from "../../asset/image 2.png";
+import Logo from "../../asset/imageForm.png";
 import Logo2 from "../../asset/image3.png";
 import Close from "../../asset/Close_square_light.png";
 import "./styles.scss";
@@ -41,7 +41,7 @@ const Form = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 8,
+              gap: 6,
               overflow: "hidden",
               textOverflow: "ellipsis",
             }}
@@ -56,6 +56,7 @@ const Form = () => {
             <p> {`Cuộc gọi từ ${tab.phone}`}</p>
           </div>
           <img
+          className="form-close"
             src={Close}
             alt="Close"
             onClick={() => {

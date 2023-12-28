@@ -43,8 +43,8 @@ const Form1 = () => {
                 gap: 8,
               }}
             >
-              <img src={Call} alt="call" />
-              <img src={ArrowDown} alt="ArroeDown" />
+              <img style={{width:20,height:20}} src={Call} alt="call" />
+              <img style={{width:20,height:20}} src={ArrowDown} alt="ArroeDown" />
             </div>
           </div>
         </div>

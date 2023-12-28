@@ -25,10 +25,10 @@ const Register = () => {
         }}
       />
       <InputForm
-        data={{ title: "Mật khẩu", placeholder: "*******", type: "password" }}
+        data={{ title: "Mật khẩu", placeholder: "*******", type: "password",icon:true }}
       />
        <InputForm
-        data={{ title: "Nhập lại mật khẩu", placeholder: "*******", type: "password" }}
+        data={{ title: "Nhập lại mật khẩu", placeholder: "*******", type: "password",icon:true }}
       />
       <Btn title={"Đăng Ký"} link="/" />
     </ModalForm>

@@ -11,7 +11,7 @@ const persistConfig =
 	key             : 'root',
 	storage         : storage,
 	stateReconciler : autoMergeLevel2,
-	blacklist       : [ 'sessions', 'userStatus' ]
+	blacklist       : [ 'sessions', 'userStatus','dashboard' ]
 };
 
 const reduxMiddlewares =

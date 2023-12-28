@@ -5,6 +5,7 @@ import sessionHistory from './sessionHistory';
 import userStatus from './userStatus';
 import notifications from './notifications';
 import appReduce from './appReduce';
+import dashboard from './dashboard';
 
 export default combineReducers({
 	user,
@@ -13,4 +14,5 @@ export default combineReducers({
 	userStatus,
 	notifications,
 	appReduce,
+	dashboard,
 });

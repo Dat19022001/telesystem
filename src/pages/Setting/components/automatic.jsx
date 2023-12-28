@@ -1,10 +1,10 @@
 import { Switch } from "antd";
 import Save from "../../../asset/save.png";
-import Rectangle from "../../../asset/Rectangle 1.png";
-import Setting from "../../../asset/lets-icons_setting-line-light.png";
-import Polygon from "../../../asset/Polygon 2.png";
-import Call from "../../../asset/Call.png";
-import CallAgree from "../../../asset/CallAgree.png";
+// import Rectangle from "../../../asset/Rectangle 1.png";
+// import Setting from "../../../asset/lets-icons_setting-line-light.png";
+// import Polygon from "../../../asset/Polygon 2.png";
+// import Call from "../../../asset/Call.png";
+// import CallAgree from "../../../asset/CallAgree.png";
 import "./automatic.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { setCollapse } from "../../../redux/slice/appReduce";
@@ -51,7 +51,7 @@ const Automatic = () => {
           </div>
         </div>
       </div>
-      <div className="automatic-demo">
+      {/* <div className="automatic-demo">
         <div className="modal" style={{ display: "block" }}>
           <div className="modal-title">
             <div className="modal-name">Le Thi Soa</div>
@@ -105,7 +105,7 @@ const Automatic = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -10,8 +10,8 @@ const History = () => {
             <span>27/07/2020 2:46:44 CH</span>
           </div>
         </div>
-        <div style={{ marginLeft: 80 }}>
-          <input placeholder="KH có nhu cầu mua hàng" />
+        <div style={{ marginLeft: 60 }}>
+          <div className="from1-history-input">KH có nhu cầu mua hàng</div> 
         </div>
       </div>
       <div className="from1-history-item">
@@ -22,8 +22,8 @@ const History = () => {
             <span>27/07/2020 2:46:44 CH</span>
           </div>
         </div>
-        <div style={{ marginLeft: 80 }}>
-          <input placeholder="KH có nhu cầu mua hàng" />
+        <div style={{ marginLeft: 60 }}>
+          <div className="from1-history-input">KH có nhu cầu mua hàng</div> 
         </div>
       </div>
     </div>

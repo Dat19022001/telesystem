@@ -3,25 +3,33 @@
   right: 6%;
   top: 76px;
   box-sizing: border-box;
-  width: 428px;
+  width: 290px;
   border-radius: 17px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: #fdfdfd;
   box-shadow: 0px 4px 118.9px 0px rgba(0, 0, 0, 0.19);
-  padding: 25px 29px 40px 29px;
-  z-index: 2;
-  display: none;
+  padding: 20px 20px 20px 20px;
+  // animation
+  opacity: 0;
+  max-width: 0;
+  max-height: 0;
+  transform: perspective(600px) rotateX(-90deg);
+  visibility: hidden;
+  transform-origin: 0% 0%;
+  z-index: 99;
+  display: block;
+  
   .modal-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 32px;
+    margin-bottom: 15px;
   }
   .modal-name {
     color: #4ed248;
     text-align: center;
-    font-family: Roboto;
-    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
@@ -30,14 +38,14 @@
     display: flex;
     align-items: center;
     .modal-rectangle {
-      width: 25px;
-      height: 3px;
-      margin-right: 16px;
+      width: 18px;
+      height: 2px;
+      margin-right: 12px;
       background: #d9d9d9;
     }
     .modal-setting {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       opacity: 0.5;
       background: #d9d9d9;
       margin-right: 6px;
@@ -54,18 +62,18 @@
     border: 1px solid #f4f5fe;
     background: #fff;
     box-shadow: 0px 4px 47.2px 0px rgba(132, 146, 244, 0.28);
-    width: 370px;
-    margin-bottom: 20px;
+    width: 250px;
+    margin-bottom: 10px;
   }
   .modal-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0 0 20px;
+    padding: 15px 0 0 15px;
     p {
       color: #000;
-      font-family: Roboto;
-      font-size: 22px;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -87,46 +95,46 @@
     }
     .modal-time {
       display: flex;
-      width: 114px;
-      height: 49px;
-      padding: 10px 19px;
+      width: 80px;
+      height: 35px;
+      padding: 5px 19px;
       align-items: center;
       gap: 10px;
       flex-shrink: 0;
       border-radius: 16px 12px 0px 16px;
       background: linear-gradient(90deg, #f55d4f 0%, #fa3140 100%);
       color: #fff;
-      font-family: Roboto;
-      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      font-size: 11px;
       font-weight: 600;
     }
   }
   .modal-caller {
     position: relative;
     color: #000;
-    font-family: Roboto;
-    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 14px;
+    margin-bottom: 5px;
     padding-left: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
       left: 20px;
       opacity: 0.4;
-      width: 107.168px;
+      width: 70px;
       height: 1px;
       background-image: url("../../asset/Line\ 3.png");
     }
   }
   .modal-phone {
     color: #000;
-    font-family: Roboto;
-    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -135,8 +143,8 @@
   }
   strong {
     color: #7888f9;
-    font-family: Roboto;
-    font-size: 22px;
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -145,20 +153,21 @@
   .modal-InformationCaller {
     background: linear-gradient(76deg, #8190f6 7.12%, #a0a5e6 93.85%);
     border-radius: 0 0 40px 40px;
-    padding: 40px;
+    padding: 20px;
+    padding-bottom: 25px;
     text-align: center;
     p {
       margin: 0;
     }
   }
-  .modal-InformationCaller-active{
+  .modal-InformationCaller-active {
     display: none;
   }
   .modal-InfoName {
     color: #fff;
     text-align: center;
-    font-family: Roboto;
-    font-size: 24px;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -174,10 +183,11 @@
     align-items: center;
     cursor: pointer;
     img {
-      margin-right: 17px;
+      margin-right: 10px;
+      width: 50px;
     }
     .modal-point {
-      background-color: #F8477F;
+      background-color: #f8477f;
       border-radius: 50%;
     }
   }
@@ -186,35 +196,41 @@
     align-items: center;
     cursor: pointer;
     img {
-      margin-left: 17px;
+      margin-left: 10px;
+      width: 50px;
     }
     .modal-point {
-      background-color: #83F0B6;
+      background-color: #83f0b6;
       border-radius: 50%;
     }
-    
   }
   .modal-point1 {
-    width: 15px;
-    height: 15px;
-    margin: 0px 6px;
-  }
-  .modal-point2 {
-    width: 9px;
-    height: 9px;
-    margin: 0px 5px;
-  }
-  .modal-point3 {
-    width: 6px;
-    height: 6px;
+    width: 12px;
+    height: 12px;
     margin: 0px 4px;
   }
-  .modal-point4 {
-    width: 4px;
-    height: 4px;
+  .modal-point2 {
+    width: 7px;
+    height: 7px;
     margin: 0px 3px;
   }
+  .modal-point3 {
+    width: 5px;
+    height: 5px;
+    margin: 0px 2px;
+  }
+  .modal-point4 {
+    width: 3px;
+    height: 3px;
+    margin: 0px 1px;
+  }
 }
-.modal-active{
-  display: block;
+.modal-active {
+  opacity: 1;
+  max-width: 3000px;
+  max-height: 3000px;
+  visibility: visible;
+  transform: perspective(600px) rotateX(0deg);
+  transition: transform 0.5s ease, opacity 0.2s ease, max-height 0s step-end,
+    max-width 0s step-end, padding 0s step-end;
 }

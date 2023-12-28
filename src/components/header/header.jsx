@@ -11,7 +11,7 @@ import Form from "../form";
 import { setCall } from "../../reducers/appReduce";
 
 const Header = () => {
-  const { autoReceived,call } = useSelector((states) => states.appReduce);
+  const { autoReceived, call } = useSelector((states) => states.appReduce);
   const dispatch = useDispatch();
   return (
     <div className="header">
@@ -19,7 +19,7 @@ const Header = () => {
       <div className="header-select">
         <div className="header-checkbox">
           <img className="header-input" src={Checkbox} alt="checkbox" />
-          <label>Sẵn sàng</label>
+          <label>Sẵn sàng </label>
         </div>
         <img className="header-arrow" src={ArrowDown} alt="ArrowDown" />
       </div>

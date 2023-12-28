@@ -44,7 +44,7 @@ export default class SipCaller {
       displayName: displayName,
       transportOptions: {
         wsServers: [outboundProxy],
-        traceSip: true,
+        traceSip: false,
       },
       sessionDescriptionHandlerFactoryOptions: {
         peerConnectionOptions: {
@@ -54,6 +54,7 @@ export default class SipCaller {
         },
       },
     });
+  
 
     if (autoReceived) {
       this._ua.on("invite", (session) => {

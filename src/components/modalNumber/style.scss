@@ -1,16 +1,16 @@
 .number {
   .number-body {
-    padding-bottom: 50px;
+    padding-bottom: 40px;
   }
   .number-input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     input {
       color: #000;
-      font-family: Roboto;
-      font-size: 30px;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -20,8 +20,8 @@
       }
       &::placeholder {
         color: #000;
-        font-family: Roboto;
-        font-size: 30px;
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -33,33 +33,35 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+  .modal-content {
+    width: 320px;
   }
   .number-item {
-    width: 30%;
-    height: 80px;
+    width: 27%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 10px;
     flex-direction: column;
     border-radius: 10px;
     background: #f8f8f8;
-
     color: #4277ff;
     text-align: center;
-    font-family: Roboto;
-    font-size: 32px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
+    cursor: pointer;
     span {
       color: #000;
-
       text-align: center;
-      font-family: Roboto;
-      font-size: 16px;
+      font-family: "Roboto", sans-serif;
+      font-size: 9px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
@@ -70,8 +72,8 @@
     span {
       display: block;
       color: #000;
-      font-family: Roboto;
-      font-size: 16px;
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
@@ -81,11 +83,11 @@
     }
   }
   .phone-item {
-    padding: 12px 17px;
+    padding: 8px 12px;
     border-radius: 11px;
     background: #f2f6ff;
-    font-family: Roboto;
-    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -96,9 +98,21 @@
     strong {
       color: #3967dd;
       opacity: 0.5;
+      font-size: 12px;
+    }
+  }
+  .answered-footer {
+    .answered-call {
+      width: 50px !important;
     }
   }
 }
-.number-active{
-  display: block;
+.number-active {
+  opacity: 1;
+  max-width: 3000px;
+  max-height: 3000px;
+  visibility: visible;
+  transform: perspective(600px) rotateX(0deg);
+  transition: transform 0.5s ease, opacity 0.2s ease, max-height 0s step-end,
+    max-width 0s step-end, padding 0s step-end;
 }

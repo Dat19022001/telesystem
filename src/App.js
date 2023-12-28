@@ -12,7 +12,6 @@ import ModalNumber from "./components/modalNumber";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import SipCallerContext from "./sipCallerContext";
-import WebFont from "webfontloader";
 import { store } from "./store";
 import SipCaller from "./sipCaller";
 import { useNavigate } from "react-router-dom";
@@ -22,18 +21,18 @@ import { setFormId, setTab } from "./reducers/appReduce";
 function App() {
   const { autoRegister } = useSelector((states) => states.user);
   const { autoReceived } = useSelector((states) => states.appReduce);
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  var sipCaller;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  let sipCaller;
   const Answer = () => {
     const generateRandomId = () => {
       return uuidv4();
     };
     const random = () => {
       const randomFraction = Math.random();
-  
+
       const randomChar = randomFraction < 0.5 ? "1" : "2";
-  
+
       return randomChar;
     };
     const id = generateRandomId();
@@ -45,8 +44,8 @@ function App() {
     dispatch(setFormId(id));
     dispatch(setTab(data));
     navigate("/form", { replace: true });
-  }
-  SipCaller.init({ store,Answer });
+  };
+  SipCaller.init({ store, Answer });
   sipCaller = new SipCaller();
   global.sipCaller = sipCaller;
 
@@ -59,13 +58,6 @@ function App() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoReceived]);
-  useEffect(() => {
-    WebFont.load({
-      google: {
-        families: ["RoBoTo","Inter"],
-      },
-    });
-  }, []);
 
   return (
     <div className="App">

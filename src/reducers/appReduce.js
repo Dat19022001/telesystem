@@ -10,7 +10,7 @@ const initialState = {
   call: false,
   formId: null,
   autoReceived: false,
-  test: null,
+  remember: false
 };
 
 const appReducer = createSlice({
@@ -50,9 +50,9 @@ const appReducer = createSlice({
     setAutoReceived: (states, action) => {
       states.autoReceived = action.payload;
     },
-    setTest: (states, action) => {
-      states.test = action.payload;
-    },
+    setRemember: (states, action) => {
+      states.remember = action.payload;
+    }
   },
 });
 
@@ -68,6 +68,6 @@ export const {
   setFormId,
   setAutoReceived,
   setCleanTab,
-  setTest,
+  setRemember
 } = appReducer.actions;
 export default appReducer.reducer;

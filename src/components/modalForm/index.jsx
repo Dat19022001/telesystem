@@ -14,14 +14,15 @@ const ModalForm = ({ data, children }) => {
         <p>{data.sub}</p>
         {children}
 
-        {data.title === "Đăng nhập" ? (
+        {data.title === "Đăng nhập" && (
           <div className="ModalForm-register">
             Chưa có tài khoản?
             <Link to="/register">
               <span>Đăng ký</span>
             </Link>
           </div>
-        ) : (
+        ) }
+        {data.title === "Đăng ký" && (
           <div className="ModalForm-register">
             Đã có tài khoản?
             <Link to="/">

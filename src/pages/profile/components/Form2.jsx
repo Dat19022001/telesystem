@@ -1,8 +1,9 @@
 import InfoCaller from "./Infocaller";
-import "./Form2.scss";
+
 import { useState } from "react";
 import History from "./History";
 import Save from "../../../asset/save.png"
+import "./Form2.scss";
 const Form2 = () => {
   const [tab, setTab] = useState("1");
   return (
@@ -30,42 +31,42 @@ const Form2 = () => {
             <input placeholder="1000000035" />
           </div>
           <div className="contract-input">
-            <label>ĐT cố định</label>
+            <label>ĐT di động</label>
             <input placeholder="1000000035" />
           </div>
           <div className="contract-input">
-            <label>ĐT cố định</label>
+            <label>ĐT cơ quan</label>
             <input placeholder="1000000035" />
           </div>
         </div>
         <div className="from2-item">
           <div className="contract-input">
-            <label>ĐT cố định</label>
-            <input placeholder="1000000035" />
+            <label>Giới tính</label>
+            <input placeholder="Nam" />
           </div>
           <div className="contract-input">
-            <label>ĐT cố định</label>
-            <input placeholder="1000000035" />
+            <label>Email</label>
+            <input placeholder="techcombank@gmail.com" />
           </div>
           <div className="contract-input">
-            <label>ĐT cố định</label>
-            <input placeholder="1000000035" />
+            <label>Năm sinh</label>
+            <input placeholder="17/08/1998" />
           </div>
         </div>
         <div className="from2-item">
           <div className="contract-input from2-input">
-            <label>ĐT cố định</label>
-            <input placeholder="1000000035" />
+            <label>Chuyên viên quản lý</label>
+            <input placeholder="Nguyễn Văn A" />
           </div>
           <div className="contract-input from2-input">
-            <label>ĐT cố định</label>
-            <input placeholder="1000000035" />
+            <label>Queue hiện tại</label>
+            <input placeholder="MGR" />
           </div>
         </div>
         <div className="from2-item">
           <div className="contract-input" style={{ width: "100%" }}>
-            <label>ĐT cố định</label>
-            <input placeholder="1000000035" />
+            <label>Địa chỉ</label>
+            <input placeholder="no 44 Dao Tan STR-Badinh dis.hanoi" />
           </div>
         </div>
       </div>
@@ -89,52 +90,100 @@ const Form2 = () => {
             <div className="form1-tab1">
               <div className="from2-item">
                 <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
+                  <label>Số điện thoại</label>
                   <input placeholder="1000000035" />
                 </div>
                 <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
-                  <input placeholder="1000000035" />
-                </div>
-              </div>
-              <div className="from2-item">
-                <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
-                  <input placeholder="1000000035" />
-                </div>
-                <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
-                  <input placeholder="1000000035" />
+                  <label>Tên người liên hệ</label>
+                  <input placeholder="KH 1000000035" />
                 </div>
               </div>
               <div className="from2-item">
                 <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
-                  <input placeholder="1000000035" />
+                  <label>Thời gian bắt đầu</label>
+                  <input placeholder="09/06/2023 15:45:22" />
                 </div>
                 <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
-                  <input placeholder="1000000035" />
-                </div>
-              </div>
-              <div className="from2-item">
-                <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
-                  <input placeholder="1000000035" />
-                </div>
-                <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
-                  <input placeholder="1000000035" />
+                  <label>Thời gian kết thúc</label>
+                  <input placeholder="09/06/2023 15:45:22" />
                 </div>
               </div>
               <div className="from2-item">
                 <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
-                  <input placeholder="1000000035" />
+                  <label htmlFor="NLH">Người liên hệ</label>
+                  <select
+                    className="from2-select"
+                    name="NLH"
+                    id="NLH"
+                  >
+                    <option value="5">Khách hàng</option>
+                    <option value="10">Khách hàng</option>
+                    <option value="15">Khách hàng</option>
+                  </select>
                 </div>
                 <div className="contract-input from2-input">
-                  <label>ĐT cố định</label>
-                  <input placeholder="1000000035" />
+                <label htmlFor="NLH">Phương thức gọi</label>
+                  <select
+                    className="from2-select"
+                    name="NLH"
+                    id="NLH"
+                  >
+                    <option value="5">Khách hàng</option>
+                    <option value="10">Khách hàng</option>
+                    <option value="15">Khách hàng</option>
+                  </select>
+                </div>
+              </div>
+              <div className="from2-item">
+                <div className="contract-input from2-input">
+                <label htmlFor="NLH">Kết quả</label>
+                  <select
+                    className="from2-select"
+                    name="NLH"
+                    id="NLH"
+                  >
+                    <option value="5">Khách hàng</option>
+                    <option value="10">Khách hàng</option>
+                    <option value="15">Khách hàng</option>
+                  </select>
+                </div>
+                <div className="contract-input from2-input">
+                <label htmlFor="NLH">Phàn nàn của KH</label>
+                  <select
+                    className="from2-select"
+                    name="NLH"
+                    id="NLH"
+                  >
+                    <option value="5">Khách hàng</option>
+                    <option value="10">Khách hàng</option>
+                    <option value="15">Khách hàng</option>
+                  </select>
+                </div>
+              </div>
+              <div className="from2-item">
+                <div className="contract-input from2-input">
+                <label htmlFor="NLH">Khó thu</label>
+                  <select
+                    className="from2-select"
+                    name="NLH"
+                    id="NLH"
+                  >
+                    <option value="5">Khách hàng</option>
+                    <option value="10">Khách hàng</option>
+                    <option value="15">Khách hàng</option>
+                  </select>
+                </div>
+                <div className="contract-input from2-input">
+                <label htmlFor="NLH">Nguyên nhân nợ quá hạn</label>
+                  <select
+                    className="from2-select"
+                    name="NLH"
+                    id="NLH"
+                  >
+                    <option value="5">Khách hàng</option>
+                    <option value="10">Khách hàng</option>
+                    <option value="15">Khách hàng</option>
+                  </select>
                 </div>
               </div>
               <div className="contract-input" style={{ width: "100%" }}>
@@ -143,7 +192,7 @@ const Form2 = () => {
               </div>
               <div className="form2-footer">
                 <div className="from2-btn">
-                  <img src={Save} alt="save"/>
+                  <img src={Save} alt="save" />
                   Lưu tác nghiệp
                 </div>
                 <div className="from2-btn btn-active">

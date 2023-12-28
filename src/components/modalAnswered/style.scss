@@ -1,18 +1,30 @@
 .answered {
+  .modal-name{
+    font-size: 13px;
+  }
   .modal-info {
     .modal-time {
       background: linear-gradient(90deg, #049552 0%, #58ac45 100%);
     }
   }
+  // .modal-header{
+  //   p{
+  //   font-size: 14px;
+  //   }
+  // }
+  // .modal-content{
+  //   width: 320px;
+  // }
+
   .answered-tool {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 54px;
-    margin-bottom: 20px;
+    gap: 29px;
+    margin-bottom: 10px;
     img {
-      width: 24px;
-      height: 24px;
+      width: 15px;
+      height: 15px;
     }
   }
   .modal-InformationCaller {
@@ -23,24 +35,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 200px;
-    padding-top: 34px;
-    padding-bottom: 34px;
+    gap: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 0 0 40px 40px;
     background: linear-gradient(90deg, #8391f4 6.71%, #9ea3e7 95.48%);
     box-shadow: 0px 21px 99.7px 0px rgba(0, 0, 0, 0.25);
+    img{
+      width: 15px;
+    }
   }
   .answered-call {
     position: absolute;
-    top: -45px;
-    left: 35%;
+    top: -25px;
+    left: 39%;
     cursor: pointer;
+    width: 59px !important;
   }
   .modal-content-active{
     display: none;
   }
-  
+  .modal-collapse{
+    display: none;
+  }
 }
 .answered-active{
-  display: block;
+  opacity: 1;
+  max-width: 3000px;
+  max-height: 3000px;
+  visibility: visible;
+  transform: perspective(600px) rotateX(0deg);
+  transition: transform 0.5s ease, opacity 0.2s ease, max-height 0s step-end,
+    max-width 0s step-end, padding 0s step-end;
 }

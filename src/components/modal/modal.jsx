@@ -18,6 +18,7 @@ const Modal = () => {
   const sipCaller = useContext(SipCallerContext);
   const { collapse, autoReceived } = useSelector((states) => states.appReduce);
   const sessions = useSelector((state) => state.sessions);
+  console.log(sessions)
  
   const incomingSessions = Object.values(sessions).filter(
     (session) =>
@@ -81,7 +82,7 @@ const Modal = () => {
                     <p>Cuộc gọi đến</p>
                   </div>
 
-                  <div className="modal-time">00:12</div>
+                  <div className="modal-time">00:00</div>
                 </div>
                 <p className="modal-caller">Anh Vu</p>
                 <div style={{ marginBottom: 34 }}>
@@ -156,7 +157,7 @@ const Modal = () => {
                   <p>Đang gọi</p>
                 </div>
 
-                <div className="modal-time">00:12</div>
+                <div className="modal-time">00:00</div>
               </div>
               <p className="modal-caller">Anh Vu</p>
               <div style={{ marginBottom: 34 }}>

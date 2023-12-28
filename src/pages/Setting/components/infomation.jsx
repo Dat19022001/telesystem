@@ -25,34 +25,43 @@ const Information = () => {
         <div className="information-form">
           <div className="information-item">
             <div className="contract-input information-input">
-              <label>ĐT cố định</label>
-              <input placeholder="1000000035" />
+              <label>Tên người dùng:</label>
+              <input placeholder="Techcombank" />
             </div>
             <div className="contract-input information-input">
-              <label>ĐT cố định</label>
-              <input placeholder="1000000035" />
+              <label>Số máy lẻ:</label>
+              <input placeholder="094632318" />
             </div>
           </div>
           <div className="information-item">
             <div className="contract-input information-input">
-              <label>ĐT cố định</label>
-              <input placeholder="1000000035" />
+              <label>Email:</label>
+              <input placeholder="a@gmail.com" />
             </div>
             <div className="contract-input information-input">
-              <label>Mật khẩu</label>
+              <label>Đổi mật khẩu:</label>
               <div className="information-pass">
                 <input placeholder="*******" type="password" />
-                <div className="information-change" onClick={()=> handleOpen()}>
+                <div className="information-change" onClick={() => handleOpen()}>
                   <p>Đổi mật khẩu</p>
-                  <img src={Lock} alt="lock"/>
+                  <img src={Lock} alt="lock" />
                 </div>
               </div>
             </div>
           </div>
           <div className="information-item">
             <div className="contract-input information-input">
-              <label>ĐT cố định</label>
-              <input placeholder="1000000035" style={{ width: "46%" }} />
+              <label htmlFor="MNS">Mã nhân sự:</label>
+              <select
+                className="information-select"
+                name="MNS"
+                id="MNS"
+                style={{ width: "48%" }} 
+              >
+                <option value="5">FSI 0000777</option>
+                <option value="10">FSI 0000777</option>
+                <option value="15">FSI 0000777</option>
+              </select>
             </div>
           </div>
         </div>

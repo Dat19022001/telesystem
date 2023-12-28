@@ -2,7 +2,7 @@ import InputForm from "../../components/modalForm/component/inputPass";
 import Btn from "../../components/modalForm/component/btn";
 import ModalForm from "../../components/modalForm";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   setAutoRegister,
   setDisplayName,
@@ -10,13 +10,17 @@ import {
   setPassword,
   setSipUri,
 } from "../../actions/stateActions";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import SipCallerContext from "../../sipCallerContext";
+import { setRemember } from "../../reducers/appReduce";
+import { setMenuActive } from "../../reducers/dashboard";
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const sipCaller = useContext(SipCallerContext);
+  const {remember} = useSelector(states => states.appReduce)
+  const {sipUri,password} = useSelector(states => states.user)
 
   const [url, setUrl] = useState("");
   const handleUrl = (value) => {
@@ -35,8 +39,16 @@ const Login = () => {
     );
     sipCaller.register();
     dispatch(setAutoRegister({ autoRegister: true }));
+    dispatch(setMenuActive("Home"))
     navigate("/dashboard", { replace: true });
   };
+  useEffect(()=>{
+    if(remember){
+      setPass(password)
+      setUrl(sipUri)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
 
   return (
     <ModalForm
@@ -48,6 +60,7 @@ const Login = () => {
       <InputForm
         data={{
           value: url,
+          check: "Email",
           title: "Email",
           placeholder: "user1@techcombank.com.vn",
           type: "text",
@@ -57,18 +70,20 @@ const Login = () => {
       <InputForm
         data={{
           value: pass,
-          title: "Password",
+          check:"Password",
+          title: "Mật Khẩu",
           placeholder: "*******",
           type: "password",
+          icon: true,
           handlePass,
         }}
       />
       <div className="ModalForm-sub">
         <div className="ModalForm-checkBox">
-          <input type="Checkbox" />
-          <label>Ghi nhớ</label>
+          <input type="checkbox" id="myCheckbox" onClick={()=> dispatch(setRemember(!remember))} checked={remember} />
+          <label for="myCheckbox" className="custom-checkbox">Ghi nhớ</label>
         </div>
-        <Link to="/">
+        <Link to="/forgotPass">
           <span>Quên mật khẩu ?</span>
         </Link>
       </div>

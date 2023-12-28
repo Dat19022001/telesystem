@@ -9,7 +9,7 @@
   .form-item {
     cursor: pointer;
     display: inline-flex;
-    padding: 10px 12px;
+    padding: 6px 10px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -23,11 +23,17 @@
       color: #000;
       text-overflow: ellipsis;
       font-family: Inter;
-      font-size: 14px;
+      font-size: 11px;
       font-style: normal;
       font-weight: 400;
       white-space: nowrap
     }
+    img{
+      width: 26px;
+    }
+  }
+  .form-close{
+    width: 12px !important;
   }
   .form-active{
     background: #fff;
